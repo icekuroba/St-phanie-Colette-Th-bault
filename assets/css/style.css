@@ -1,11 +1,3 @@
-/* ------------------------------------------------
-   font & reset css
------------------------------------------------- */
-@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
-
-/* ---------------------------------------------
-   reset
---------------------------------------------- */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, figure, header, nav, section, article, aside, footer, figcaption {
   margin: 0;
   padding: 0;
@@ -1412,32 +1404,44 @@ footer .right-text-content ul li a:hover {
 }
 
 /***** Boton cambio de idioma ********************/
+/* Asegura que los enlaces de idioma estén en línea y no se envuelvan a la siguiente línea */
 .language-switcher {
-  display: inline-block;
-  position: absolute; /* Posición absoluta para controlar su ubicación */
-  left: 20px; /* Ajusta la distancia desde el lado izquierdo */
-  top: 170px; /* Ajusta la posición vertical para moverlo más abajo */
-  font-size: 14px; /* Tamaño de la fuente para los enlaces */
-  font-weight: bold; /* Texto en negrita */
+  display: flex; /* Usa flex para alinear los elementos en línea */
+  align-items: center; /* Alinea los elementos verticalmente en el centro si es necesario */
 }
 
 .language-switcher a {
-  color: #333; /* Color del texto de los enlaces */
-  text-decoration: none; /* Elimina el subrayado de los enlaces */
-  margin: 0 5px; /* Espacio entre los enlaces */
+  color: #333; /* Color del texto */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: bold; /* Texto en negrita */
+  padding: 5px 10px; /* Espaciado alrededor de los enlaces */
 }
 
 .language-switcher a.active {
-  color: #A3C14A; /* Color para el enlace del idioma activo */
+  color: #A3C14A; /* Color del enlace activo */
 }
 
 .language-switcher a:hover {
-  text-decoration: underline; /* Subrayado al pasar el ratón sobre el enlace */
+  text-decoration: underline; /* Subrayado al pasar el ratón */
 }
 
-.header-area .main-nav {
-  position: relative; /* Esto es necesario para que la posición absoluta del cambiador de idioma funcione correctamente */
+/* Si deseas más espacio alrededor del selector de idioma en la navegación */
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
 }
+
+.nav li {
+  margin-right: 15px;
+}
+
+/* Si el selector de idioma debe estar alineado a la derecha */
+.nav li.language-switcher {
+  margin-left: auto;
+}
+
 
 /*************** configuracion **************/
 html, body {
@@ -1491,25 +1495,34 @@ html, body {
 .header-area {
   display: flex;
   align-items: center;
-  height: 80px; /* Ajusta según sea necesario */
+  justify-content: flex-start; /* Alinea los elementos a la izquierda */
+  height: 100px; /* Aumenta la altura del encabezado para más espacio */
+  padding: 0 20px; /* Añade espacio interno a los lados */
+  background-color: white; /* Establece un fondo blanco */
+  /* Eliminar margin-left para no desplazar todo el contenido */
 }
 
-.nav li {
-  margin: 0 10px; /* Ajusta el espaciado entre los elementos del menú según sea necesario */
+.logos {
+  height: 80px; /* Ajusta este valor según el tamaño deseado */
+  display: flex;
+  align-items: center; /* Centra verticalmente la imagen */
 }
- /****/
- /* Añadir estilos para que la barra lateral sea fija */
-.sticky-sidebar {
-  position: fixed; /* Fija la barra lateral */
-  top: 100px; /* Ajusta este valor según sea necesario para la posición del menú */
-  right: 0; /* Manténlo a la derecha */
-  width: 250px; /* Ajusta el ancho según sea necesario */
-  overflow-y: auto; /* Permite el desplazamiento dentro del menú si es necesario */
-  max-height: calc(100vh - 100px); /* Asegúrate de que no se salga de la vista */
-  background-color: #fff; /* Color de fondo opcional */
-  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra opcional para el menú */
-  z-index: 100; /* Asegura que esté por encima del contenido principal */
+
+.logos img {
+  height: 100%; /* Ajusta la imagen a la altura completa del contenedor */
+  width: auto; /* Mantén la proporción de la imagen */
+  object-fit: contain; /* Ajusta la imagen dentro del contenedor sin recortar */
 }
+
+.nav {
+  display: flex; /* Hace que el contenedor del menú sea un contenedor flex */
+  align-items: center; /* Alinea los elementos del menú verticalmente al centro */
+  justify-content: flex-start; /* Alinea los elementos a la izquierda */
+  padding: 0; /* Elimina cualquier relleno interno */
+  margin-left: -10px; /* Ajusta este margen para mover el menú más a la izquierda */
+  list-style: none; /* Elimina los puntos de lista predeterminados */
+}
+
 
 
 

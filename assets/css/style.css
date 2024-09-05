@@ -2554,49 +2554,60 @@ img {
   height: auto;
   display: block;
 }
-
-/* Mobile menu styling */
-.menu-trigger {
-  display: none; /* Hide on larger screens */
-  cursor: pointer;
-  font-size: 30px;
-  padding: 10px;
+/* Estilos generales para el menú */
+.sidebar {
+  height: 100%; /* Altura completa de la pantalla */
+  width: 0; /* Por defecto, oculto */
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0; /* Puedes cambiar a 'right: 0' si prefieres */
+  background-color: #111; /* Color de fondo */
+  overflow-x: hidden; /* Deshabilita el desplazamiento horizontal */
+  transition: 0.5s; /* Suaviza la animación de apertura/cierre */
+  padding-top: 60px;
 }
 
-@media (max-width: 768px) {
-  .menu-trigger {
-    display: block; /* Show menu trigger on mobile */
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 1000;
-  }
-
-  .sidebar {
-    transform: translateX(100%); /* Hide sidebar by default */
-    width: 70%; /* Adjust width for mobile screens */
-    position: fixed;
-    right: 0;
-    height: 100%;
-    background: #fff;
-    z-index: 1000;
-    transition: transform 0.3s ease;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-  }
-
-  .sidebar.open {
-    transform: translateX(0); /* Show sidebar when open */
-  }
-
-  body {
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-  }
-
-  .main-nav {
-    display: none; /* Hide top navigation on mobile */
-  }
+/* Estilos para los enlaces dentro del menú */
+.sidebar a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
 }
 
+/* Cambia el color del enlace al pasar el ratón */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Botón para cerrar el menú */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Ajusta el contenido principal cuando el menú está abierto */
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* Estilos cuando el menú está abierto */
+.sidebar.open {
+  width: 250px;
+}
+
+/* Asegúrate de que el contenido se ajuste al abrir el menú */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
 
 
 

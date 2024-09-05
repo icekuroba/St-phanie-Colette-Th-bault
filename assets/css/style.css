@@ -1973,7 +1973,7 @@ img {
   right: 0;
   height: 100%;
   background-color: #fff;
-  width: 70%; /* Ajustar el ancho para móviles */
+  width: 1000%; /* Ajustar el ancho para móviles */
   transform: translateX(100%); /* Oculto por defecto */
   transition: transform 0.3s ease-in-out; /* Suaviza la transición de apertura y cierre */
   z-index: 1000;

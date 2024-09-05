@@ -55,4 +55,17 @@ function toggleSidebar() {
       }
     });
   }
+// Función para abrir/cerrar el menú lateral en móviles
+function toggleSidebar() {
+    var sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('open');
+    document.body.classList.toggle('sidebar-open'); // Evita desplazamiento
+}
+
+// Función para cerrar el menú lateral
+function closeSidebar() {
+    var sidebar = document.getElementById('sidebar');
+    sidebar.classList.remove('open');
+    document.body.classList.remove('sidebar-open');
+}
   

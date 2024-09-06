@@ -9,7 +9,6 @@
     <title>Stéphanie Colette Thébault</title>
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -17,7 +16,17 @@
     <link rel="stylesheet" href="assets/css/lightbox.css">
 
     <style>
-        
+        /* Estilos generales */
+        .language-switcher a {
+            margin: 0 5px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .language-switcher a.active {
+            color: #7CC14A; /* Color para resaltar el idioma activo */
+        }
         /* Menú móvil */
         .menu-trigger {
             display: none; /* Ocultar en pantallas grandes */
@@ -136,15 +145,14 @@
 <script>
     // Función para abrir/cerrar el menú lateral en móviles
     function toggleSidebar() {
-        var sidebar = document.getElementById('sidebar');
-        sidebar.classList.toggle('open');
-    }
+            document.querySelector('.sidebar').classList.toggle('open');
+            document.body.classList.toggle('sidebar-open');
+        }
 
-    // Función para cerrar el menú lateral
-    function closeSidebar() {
-        var sidebar = document.getElementById('sidebar');
-        sidebar.classList.remove('open');
-    }
+        function closeSidebar() {
+            document.querySelector('.sidebar').classList.remove('open');
+            document.body.classList.remove('sidebar-open');
+        }
 </script>
 
 <!-- Otros scripts y contenido aquí -->

@@ -1,0 +1,777 @@
+:root {
+  --color-primary: #7CC14A; /* Verde claro */
+  --color-secondary: #029B75; /* Verde agua */
+  --color-tercer: #e0f7da; /* Verde claro */
+  --color-text: #000000; /* Negro */
+  --color-background: #ffffff; /* Blanco */
+  --color-muted: #2a2a2a; /* Gris oscuro para textos secundarios */
+  --color-border: #dddddd; /* Gris para bordes */
+}
+/* -------------------------------------------------------------------------------------- */
+/*                                        Estilos Generales                                */
+/* -------------------------------------------------------------------------------------- */
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #7CC14A;
+}
+p, li {
+  text-align: justify;
+  font-size: 18px;
+  line-height: 25px;
+  color: #2a2a2a;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+section {
+  padding: 60px 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.btn {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+.btn:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 576px) {
+  .main-content {
+    padding: 6px;
+  }
+  h1, h2, h3 {
+    font-size: 18px;
+  }}
+.section-heading h6 {
+  font-size: 28px; /* Tamaño de fuente del subtítulo */
+  color: #7CC14A; /* Verde más claro para subtítulos */
+  text-align: center; /* Alinea el subtítulo al centro */
+  letter-spacing: 1px; /* Añade un poco de espacio entre letras */
+  margin-bottom: 20px; /* Espacio debajo del subtítulo */
+}
+/*                           Imagen de fondo                    */
+body {
+  background-image: url('https://raw.githubusercontent.com/icekuroba/St-phanie-Colette-Th-bault/main/Fondo/imagenfondo2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* Color y opacidad del overlay */
+  z-index: -1; /* Asegura que esté detrás del contenido */
+}
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  body {
+    background-size: 140%;
+    background-position: 20% center; 
+  }
+}
+/* -------------------------------------------------------------------------------------- */
+/*                            Barra de Navegación (versión PC)                             */
+/* -------------------------------------------------------------------------------------- */
+.main-nav {
+  display: flex;
+  justify-content: flex-start; /* Alinea todo hacia la izquierda */
+  align-items: center; /* Alinea los elementos verticalmente al centro */
+  padding: 15px 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: flex-start; /* Alinea los elementos de la lista hacia la izquierda */
+  margin: 0;
+  padding: 0;
+  margin-left: 20px; /* Añade un margen izquierdo para separar los elementos del logo */
+}
+.main-nav ul li a[href="#top"] {
+  color: #000; /* Color del enlace Home/Inicio a negro */
+}
+.main-nav ul li a {
+  color: var(--color-text);
+  font-weight: bold;
+  margin: 0 15px; /* Margen entre enlaces */
+  transition: color 0.3s ease;
+}
+.main-nav ul li a:hover {
+  color: var(--color-primary);
+}
+.main-nav .logos {
+  display: flex;
+  align-items: center;
+}
+.main-nav .logos img {
+  height: 40px;
+  margin-right: 10px; /* Ajusta el espacio entre el logo y los elementos de la lista */
+  object-fit: contain;
+}
+
+/* -------------------------------------------------------------------------------------- */
+/*                            Barra de Navegación (versión Móvil)                          */
+/* -------------------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .main-nav ul {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+  .menu-trigger {
+    display: block;
+    font-size: 30px;
+    padding: 10px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+  }
+  .menu-trigger.active + .main-nav ul {
+    display: flex;
+  }
+  .logos img {
+    height: 40px;
+  }}
+/* -------------------------------------------------------------------------------------- */
+/*                            Sección Home (versión PC y Móvil)                          */
+/* -------------------------------------------------------------------------------------- */
+#home {
+  background-color: #e0f7da; /* Verde claro */
+  padding: 30px 0;
+  text-align: center;
+}
+
+.home-content {
+  background-color: #fff;
+  margin: 20px auto;
+  max-width: 1100px; /* Aumentamos el ancho máximo del contenedor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.home-image {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 1000px; /* Aumenta el tamaño máximo de la imagen */
+  height: auto; /* Mantiene las proporciones de la imagen */
+}
+
+@media (min-width: 769px) {
+  .mobile-home {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-content {
+    max-width: 100%; /* Ocupa el 100% del ancho disponible en pantallas pequeñas */
+    padding: 10px; /* Reducimos el padding para pantallas pequeñas */
+  }
+  
+  .home-image {
+    max-width: 100%; /* Ocupa el 100% en pantallas pequeñas */
+  }
+}
+
+/* -------------------------------------------------------------------------------------- */
+/*                              Sección "Lab's interests" (versión)                    */
+/* -------------------------------------------------------------------------------------- */
+#lab-interests {
+  padding: 80px 20px;
+  max-width: 1200px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1024px) {
+  #lab-interests {
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 80%; /* El contenedor ocupa el 80% del ancho de la pantalla */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Alinea verticalmente los elementos */
+  }
+  #lab-interests .right-content {
+    flex: 0 0 70%;  /* Ajusta la columna de contenido a un 70% del ancho */
+    max-width: 70%; /* Máximo 70% para que no ocupe todo el espacio */
+    text-align: justify; /* Justificar el texto para mayor legibilidad */
+    padding-right: 25px;
+  }
+  #lab-interests .left-content {
+    flex-basis: 30%;  /* Ajusta la columna izquierda al 30% del ancho */
+    text-align: center; /* Centra la imagen y el contenido */
+    padding-right: 20px; /* Añade un margen derecho para separar las columnas */
+  }
+}
+
+/* -------------------------------------------------------------------------------------- */
+/*                              Sección "About" (versión PC)                               */
+/* -------------------------------------------------------------------------------------- */
+#about {
+  padding: 100px 30px;  /* Ajustar el padding para que no sea tan grande */
+  max-width: 1200px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+@media (min-width: 1024px) {
+  #about {
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 80%; /* El contenedor ocupa el 80% del ancho de la pantalla */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Alinea verticalmente los elementos */
+  }
+  #about .right-content {
+    flex: 0 0 70%;  /* Ajusta la columna de contenido a un 70% del ancho */
+    max-width: 70%; /* Máximo 70% para que no ocupe todo el espacio */
+    text-align: center; /* Centra el texto en la sección */
+    padding-right: 25px;
+  }
+  #about .left-content {
+    flex-basis: 30%;  /* Ajusta la columna izquierda al 30% del ancho */
+    text-align: center; /* Centra la imagen y los iconos */
+    padding-right: 20px; /* Añade un margen derecho para separar las columnas */
+  }
+  .education-section ul, .interests-section ul {
+    list-style-type: none;   /* Elimina viñetas */
+    margin: 0;               /* Elimina márgenes predeterminados */
+    text-align: justify;
+    padding-left: 1px;       /* Añade un ligero margen a la izquierda */
+}}
+#about .img-circle1 {
+  width: 100%;
+  max-width: 200px; /* Limitar el ancho máximo de la imagen */
+  height: auto; /* Mantener la proporción de la imagen */
+  border-radius: 50%;
+  margin-bottom:15px;
+}
+#about .right-content p {
+  font-size: 16px;
+  color: #000;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+/* Educación e intereses */
+.education-section h6, .interests-section h6 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #029b75e5;
+  margin-bottom: 15px;
+}
+.education-section ul li, .interests-section ul li {
+  margin-bottom: 10px;
+  line-height: 1.4;        /* Mejora la legibilidad con una mayor altura de línea */
+  font-size: 14px;         /* Tamaño de la fuente */
+  color: #171717;          /* Color del texto */
+  text-align: justify;        /* Asegurar alineación del texto a la izquierda */
+}
+/* -------------------------------------------------------------------------------------- */
+/*                              Sección "About" (versión Móvil)                           */
+/* -------------------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .row {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Ordenar verticalmente */
+  }
+  .left-content {
+    order: 1;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .img-circle1 {
+    max-width: 150px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+  }
+  .social-icons {
+    order: 2;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .right-content {
+    order: 3;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .education-section {
+    order: 4;
+    width: 100%;
+    margin-top: 20px;
+    text-align: justify;
+  }}
+/* -------------------------------------------------------------------------------------- */
+/*                           Sección "Lab Members" (versión PC)                            */
+/* -------------------------------------------------------------------------------------- */
+#group-members {
+  margin: 0 auto;
+  padding: 80px 30px;  /* Ajustar el padding para que no sea tan grande */
+  max-width: 1000px;
+}
+@media (min-width: 1024px) {
+  #group-members {
+    text-align: left;
+    margin-bottom: 20px;
+    position: relative;
+    left: -90px;
+    margin: 5% auto;
+    width: 80%; 
+    flex: 0 0 70%;  /* Ajusta la columna de contenido a un 70% del ancho */
+    max-width: 70%; /* Máximo 70% para que no ocupe todo el espacio */
+  }}
+#group-members {
+  font-size: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+.member-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-left: 10px; /* Espacio de texto/footo*/
+  object-fit: cover;
+  margin-bottom: 50px;
+
+}
+
+ 
+.member {
+  display: flex;
+  flex-direction: row; /* Mantener la dirección de los elementos en fila */
+  align-items: center;
+  justify-content: space-between; /* Distribuir los elementos uniformemente */
+  padding: 0 60px;
+  text-align: left; /* Alinear el texto a la izquierda */
+}
+/* -------------------------------------------------------------------------------------- */
+/*                              Sección "Lab Members" (versión Móvil)                      */
+/* -------------------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  #group-members {
+    padding: 30px 10px; /* Reduce el padding superior e inferior */
+    width: 90%; 
+    text-align: left; 
+  }}
+@media (max-width: 768px) {
+  .member {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .member-photo {
+    margin-right: 0;
+    margin-bottom: 10px;
+    margin-bottom: 40px;
+  }}
+/* -------------------------------------------------------------------------------------- */
+/*                          Sección "Publications" (versión PC y Movil)                            */
+/* -------------------------------------------------------------------------------------- */
+#publications {
+  margin: 0 auto; 
+  padding: 100px 30px;  
+  margin-left: 20%;
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  #publications {
+    margin: 11%;
+    max-width: 1000px;
+    position: relative;
+    left: 0px;
+    text-align: left;
+    width: 85%; /* El contenedor ocupa el 80% del ancho de la pantalla */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Alinea verticalmente los elementos */
+  }}
+.publication-list li {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d0e3c7;
+}
+.publication-list h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+.publication-list a {
+  color: #029b75e5;
+}
+.publication-list a:hover {
+  text-decoration: underline;
+}
+/**********************************            Para moviles               *******************/
+@media (max-width: 768px) {
+  #publications {
+    padding: 15px 5%; 
+    width: 100%; 
+    margin: 0 auto; 
+    text-align: justify; 
+  }
+  .publication-list h3 {
+    font-size: 16px; /* tamaño de los títulos */
+    line-height: 1.3; 
+    margin-bottom: 10px; 
+  }
+  .publication-list {
+    padding: 0; /* Elimina cualquier padding adicional */
+    width: 100%; 
+  }}
+/* -------------------------------------------------------------------------------------- */
+/*                          Sección "Join Us" (versión PC y Móvil)                         */
+/* -------------------------------------------------------------------------------------- */
+#vacancies {
+  margin: 0 auto;
+  max-width: 1000px; 
+  padding: 80px 30px;  /* Ajustar el padding para que no sea tan grande */
+
+}
+@media (min-width: 1024px) {
+  #vacancies {
+    margin: 0 auto;
+    width: 70%;
+    max-width: 1000px;
+    text-align: left;
+    margin-bottom: 20px;
+    position: relative;
+    left: -90px;
+  }}
+#vacancies h3 {
+  font-size: 28px; /* Ajusta el tamaño del título */
+  margin-bottom: 20px; 
+  text-align: center;
+}
+.vacancies-list li {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+#vacancies, #join-us {
+  max-width: 1000px;
+  padding: 60px 30px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+@media (max-width: 768px) {
+  #vacancies {
+    padding: 15px 5%;
+    width: 100%; 
+    line-height: 1;
+    margin: 0 auto; /* Centra la sección en la pantalla */
+  }
+  #vacancies h3 {
+  font-size: 20px; /* Ajusta el tamaño del título */
+  margin-bottom:20px; /* Espaciado debajo del título */
+  text-align: center;
+  letter-spacing: 1px; /* Espaciado entre letras */
+}}
+/* -------------------------------------------------------------------------------------- */
+/*                       Sección "Video Abstracts" (versión PC)                            */
+/* -------------------------------------------------------------------------------------- */
+#abstracts {
+  padding: 100px 0 50px 0;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  #abstracts {
+    margin: 0 auto;
+    width: 70%;
+    max-width: 1000px;
+    text-align: left;
+    margin-bottom: 20px;
+    position: relative;
+    left: -90px;
+  }}
+.video-container iframe {
+  width: 80%;
+  height: 400px;
+}
+@media (max-width: 768px) {
+  #abstracts {
+    padding: 15px 5%; 
+    width: 100%; /* Ocupar todo el ancho disponible */
+    margin: 0 auto; 
+    text-align: justify; 
+  }
+  .video-container iframe {
+    width: 100%; 
+    height: 250px; 
+  }}
+/* -------------------------------------------------------------------------------------- */
+/*                     Sección "Contacts" (versión PC y Móvil)                             */
+/* -------------------------------------------------------------------------------------- */
+#contact {
+  margin: 0 auto;
+  padding: 100px 0 50px 0;
+  background-color: #fff;
+  border-radius: 5px;
+  max-width: 80%; 
+}
+@media (min-width: 1024px) {
+  #contact {
+    margin: 15%;
+    text-align: justify;
+    width: 65%; 
+  }}
+.contact-image1 {
+  display: block;
+  margin-right: 20px; /* 20px de espacio a la derecha de la imagen */
+  max-width: 110%; 
+  height: auto;
+}
+.contact-image {
+  display: block; /* línea separada */
+  margin: 10px 0; 
+  max-width: 60%; /* Escala la imagen*/
+  height: auto; 
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.icon-container {
+  width: 30px;
+  display: inline-block;
+  font-size: 24px; /* Ajusta el tamaño del ícono */
+  margin-right: 20px; /* Aumenta el margen entre los íconos */
+  position: relative;
+  margin-bottom: 0px;
+  top: -10px; /* Subir el ícono 10px */
+}
+.contact-text {
+  font-size: 15px;
+}
+@media (max-width: 768px) {
+  #contact {
+    max-width: 100%; /* Se reduce el ancho en pantallas pequeñas */
+    padding: 40px 15px; /* Menor padding en pantallas pequeñas */
+  }
+  h5 {
+    font-size: 16px; /* Ajuste de tamaño de fuente para títulos en móvil */
+    line-height: 1;
+  }
+  .contact-image1{
+    max-width: 55%;
+  }
+ .contact-image {
+    max-width: 90%; /* Ajusta el ancho de las imágenes para pantallas pequeñas */
+  }}
+/* ---------------------------------------------------------------------------------------- */
+/*                               Barra Lateral Fija (versión PC)                           */
+/* -------------------------------------------------------------------------------------- */
+.sidebar {
+  position: fixed;
+  width: 20%;
+  max-width: 300px;
+  height: 100%;
+  background-color: #fff;
+  top: 0;
+  right: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
+}
+.widget {
+  margin-bottom: 20px;
+}
+.widget-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+.widget button[type="submit"] {
+  padding: 10px;
+  border: none;
+  background-color: #A8DAB5;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.widget button[type="submit"]:hover {
+  background-color: #7CC14A;
+}
+.widget ul li a {
+  text-decoration: none;
+  color: #7CC14A;
+}
+/* ---------------------------------------------------------------------------------------- */
+/*                            Barra Lateral Fija (versión Móvil)                           */
+/* -------------------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(100%);
+    width: 70%;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .main-content {
+    margin-top: 20px;
+  }
+  .menu-trigger {
+    display: block;
+  }}
+/* ---------------------------------------------------------------------------------------- */
+/*                      Estilo del Cambio de Idioma (PC y Móvil)                           */
+/* -------------------------------------------------------------------------------------- */
+.menu-trigger {
+  position: fixed; /* Fija el botón de menú en la parte superior */
+  top: 10px;
+  left: 10px;
+  z-index: 1000; /* Asegura que el botón esté encima de otros elementos */
+  display: block; /* Mantener el botón visible */
+  cursor: pointer;
+  font-size: 30px;
+  padding: 10px;
+  background-color: #fff; /* Fondo blanco para mayor visibilidad */
+  border: 1px solid #ccc; /* Borde opcional para que se vea mejor */
+  border-radius: 5px;
+}
+.language-switcher2 a.active {
+  color: #7CC14A; /* Color del enlace activo */
+}
+.language-switcher2 a:hover {
+  text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+.language-switcher2 {
+  display: block;
+  position: absolute;
+  top: 80px; /* Ajusta la distancia desde el botón de hamburguesa */
+  left: 10px; /* Ajusta la distancia desde el lado izquierdo */
+  font-size: 14px; /* Tamaño de fuente más pequeño */
+  background-color: white; /* Fondo blanco para mayor visibilidad */
+  padding: 3px 5px; /* Menor padding para hacerlo más compacto */
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Añade sombra para resaltar */
+} 
+.language-switcher2 a {
+  margin-right: 5px; /* Espaciado más pequeño entre los enlaces */
+  color: #000;
+  font-size: 14px; /* Ajustar el tamaño de fuente de los enlaces */
+}
+@media (min-width: 769px) {
+  .language-switcher2 {
+      display: none; /* Oculta el selector de idioma en pantallas grandes */
+  }}
+/* ---------------------------------------------------------------------------------------- */
+/*                            Logos  (version paraa movil)                                 */
+/* -------------------------------------------------------------------------------------- */
+@media (min-width: 769px) {
+  .logos {
+    display: none; /* Oculta los logos en pantallas grandes */
+  }
+}
+@media (max-width: 768px) {  /* Mostrar logos solo en móviles */
+  .logos {
+    display: flex;
+    justify-content: center; /* Centra los logos en móviles */
+    margin-bottom: 10px;
+  }
+  .logos img {
+    max-width: 100px; /* Tamaño de los logos para móviles */
+    height: auto;
+    margin-left:10px; /* Espaciado entre los logos en móviles */
+  }
+  .logos img:first-child {
+    max-width: 150px; /* El logo de la izquierda será más grande */
+    height: auto;
+  }
+  .logos img:last-child {
+    max-width: 50px; /* El logo de la derecha será más pequeño */
+    height: auto;
+    margin-left: 40px; /* Espaciado entre los logos */
+  }}
+/* -------------------------------------------------------------------------------------- */
+/*                     Footer (versión PC )                             */
+/* -------------------------------------------------------------------------------------- */
+footer {
+  margin-top: 60px;
+  padding: 50px 0px;
+  background-color: #a3dcb2; 
+
+}
+footer .left-text-content p {
+  margin-top: 5px;
+  color: #A8DAB5;
+  font-size: 14px;
+  text-align: right;
+}
+footer .right-text-content {
+  text-align: left;
+  margin-top: 10px;
+}
+footer .logo {
+  text-align: center;
+}
+footer .right-text-content ul li:first-child {
+  margin-left: 0px;
+}
+footer .right-text-content ul li a {
+  width: 44px;
+  height: 44px;
+  display: inline-block;
+  text-align: center;
+  line-height: 44px;
+  font-size: 20px;
+  margin-left: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  color: #7CC14A;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+footer .right-text-content ul li a:hover {
+  color: #2a2a2a;
+}

@@ -408,52 +408,37 @@ body::before {
 /*                          Sección "Publications" (versión PC y Movil)                            */
 /* -------------------------------------------------------------------------------------- */
 #publications {
-  margin: 0 auto; 
-  padding: 100px 30px;  
-  margin-left: 20%;
-  text-align: center;
+  margin: 0 auto;
+  padding: 90px 100px;
+  max-width: 1000px;
+  text-align: left;
 }
-.container {
-    max-width: 1200px;
-    margin: 0 auto; /* This centers the content horizontally */
-    padding: 20px; /* Adjust padding for spacing */
-}
-
-.section {
-    text-align: center; /* Center text within sections */
-}
-
-#publications .container {
-    display: flex;
-    justify-content: center; /* Ensures the content is centered horizontally */
-}
-
 
 @media (min-width: 1024px) {
   #publications {
-    margin: 11%;
-    max-width: 1000px;
-    position: relative;
-    left: 0px;
+    margin: 0 auto;
+    max-width: 70%; /* Adjust the width for proper centering */
     text-align: left;
-    width: 85%; /* El contenedor ocupa el 80% del ancho de la pantalla */
-    display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Alinea verticalmente los elementos */
-  }}
+    display: block; /* Ensures it remains centered */
+  }
+}
+
 .publication-list li {
   margin-bottom: 30px;
   padding-bottom: 20px;
   border-bottom: 1px solid #d0e3c7;
 }
+
 .publication-list h3 {
   font-size: 20px;
   font-weight: bold;
   color: #333;
 }
+
 .publication-list a {
   color: #029b75e5;
 }
+
 .publication-list a:hover {
   text-decoration: underline;
 }

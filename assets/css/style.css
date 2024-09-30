@@ -600,7 +600,7 @@ body::before {
     line-height: 1;
   }
   .contact-image1{
-    max-width: 90%;
+    max-width: 200%;
   }
  .contact-image {
     max-width: 90%; /* Ajusta el ancho de las imágenes para pantallas pequeñas */

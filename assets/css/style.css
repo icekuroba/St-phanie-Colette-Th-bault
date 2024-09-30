@@ -413,6 +413,22 @@ body::before {
   margin-left: 20%;
   text-align: center;
 }
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* This centers the content horizontally */
+    padding: 20px; /* Adjust padding for spacing */
+}
+
+.section {
+    text-align: center; /* Center text within sections */
+}
+
+#publications .container {
+    display: flex;
+    justify-content: center; /* Ensures the content is centered horizontally */
+}
+
+
 @media (min-width: 1024px) {
   #publications {
     margin: 11%;

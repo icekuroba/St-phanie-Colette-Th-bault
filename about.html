@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Stéphanie Colette Thébault</title>
+    <!-- Additional CSS Files -->
+    <head>
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/owl-carousel.css">
+        <link rel="stylesheet" href="assets/css/lightbox.css">
+    <style>
+        
+        /*****                                       Menú móvil                              ******/
+        .menu-trigger {
+            display: none; /* Ocultar en pantallas grandes */
+            cursor: pointer;
+            font-size: 30px;
+            padding: 10px;   
+        }
+        /*                                    Barra lateral para pantallas grandes                            */
+        .sidebar {
+            position: fixed;
+            width: 20%; 
+            max-width: 300px;
+            height: 100%;
+            background: #fff;
+            top: 0;
+            right: 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            transform: translateX(0); /* Asegura que la barra lateral esté visible en pantallas grandes */
+        }
+        /*                         Ocultar barra lateral y mostrar botón de menú en dispositivos móviles              */
+        @media (max-width: 768px) {
+            .menu-trigger {
+                display: block; /* Mostrar botón de menú en dispositivos móviles */
+            }
+            .sidebar {
+                transform: translateX(100%); /* Ocultar barra lateral fuera de la vista en dispositivos móviles */
+                width: 70%; /* Ajustar el ancho de la barra lateral en móviles si es necesario */
+            }
+            .sidebar.open {
+                transform: translateX(0); /* Mostrar barra lateral cuando se hace clic en el botón del menú */
+            }
+            .main-nav {
+                display: none; /* Ocultar menú de navegación en el encabezado en dispositivos móviles */
+            } }
+            
+    </style>
+</head>
+<body>
+    
+
+<!--------------------                             Botón de menú para móviles y PC               ------------->
+<div class="menu-trigger" onclick="toggleSidebar()">☰</div> <!-- Cambio de idioma debajo del botón de hamburguesa -->
+<div class="language-switcher2">
+    <a href="index.html" class="active">ENG</a> |
+    <a href="index_es.html">ESP</a></div>
+    <header class="header-area header-sticky">
+        <div class="container">
+            <nav class="main-nav">
+                <div class="col-12 col-lg-12"> <!-- Menú superior para escritorio -->
+                <ul class="nav" id="topMenu">
+                    <li><a href="index.html#top" onclick="closeSidebar()">Home</a></li>
+                    <li><a href="index.html#interests" onclick="closeSidebar()">Lab’s interests</a></li>
+                    <li><a href="index.html#group-members" onclick="closeSidebar()">Lab Members</a></li>
+                    <li><a href="index.html#publications" onclick="closeSidebar()">Journal Articles</a></li>
+                    <li><a href="index.html#contact" onclick="closeSidebar()">Contact</a></li>
+                    <li class="language-switcher">
+                        <a href="index.html" class="active">ENG</a> |
+                        <a href="index_es.html">ESP</a></li>
+                    <li class="logos">
+                        <img src="assets/images/INB.png" alt="UNAM" style="margin-right: 10px;">
+                        <img src="assets/images/imagen.jpg" alt="INB" style="margin-left: 10px;">
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    </header>
+    
+
+<!-- *******************                                   Menú lateral para móviles                   ***************** -->
+<div class="sidebar sticky-sidebar" id="sidebar"> <!-- Search Widget -->
+    <div class="widget">
+        <h4 class="widget-title">Search the Lab</h4>
+        <form action="#">
+            <input type="text" placeholder="Search...">
+            <button type="submit"><i class="fa fa-search"></i>Search the Lab</button>
+        </form>
+    </div>
+    <div class="widget">
+        <h4 class="widget-title">External Links</h4><ul>
+            <ul>
+                <li><a href="http://www.maestria.inb.unam.mx/" target="_blank">UNAM Master's in Sciences</a></li>
+                <li><a href="https://www.pmdcmos.unam.mx/?page_id=316" target="_blank">Master's Program in Medical, Dental, and Health Sciences</a></li>
+                <li><a href="https://www.pdcb.unam.mx/" target="_blank">Doctoral Program in Biomedical Sciences</a></li>
+            </ul>
+    </div>
+
+<!-- *******************                                   Navegacion                   ***************** -->
+    <div class="widget">
+        <h4 class="widget-title">Quick Navigation</h4>
+        <ul>
+            <li class="mobile-home"><a href="#top" onclick="closeSidebar()">Home</a></li>
+            <li><a href="#about" onclick="closeSidebar()">About</a></li>
+            <li><a href="#group-members" onclick="closeSidebar()">Lab Members</a></li>
+            <li><a href="#publications" onclick="closeSidebar()">Publications</a></li>
+            <li><a href="#vacancies" onclick="closeSidebar()">Join us</a></li>
+            <li><a href="#abstracts" onclick="closeSidebar()">Video abstracts</a></li>
+            <li><a href="#contact" onclick="closeSidebar()">Contacts</a></li> 
+        </ul>
+    </div></div>
+<div class="main-content"></div>
+<script>
+    function toggleSidebar() {  // Función para abrir/cerrar el menú lateral en móviles
+            document.querySelector('.sidebar').classList.toggle('open');
+            document.body.classList.toggle('sidebar-open');
+        }
+        function closeSidebar() {
+            document.querySelector('.sidebar').classList.remove('open');
+            document.body.classList.remove('sidebar-open');
+        }
+</script>
+</body>
+</html>
+
+<!-----------------                                                  Logos y Home Section                    ------------------->
+<div class="logos-home">
+    <div class="logos"> <!-- Solo visibles en móviles -->
+        <img src="assets/images/INB.png" alt="INB" class="logo">
+        <img src="assets/images/imagen.jpg" alt="UNAM" class="logo">
+    </div>
+</div>
+<section class="section" id="home">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="home-content">
+                    <img src="assets/images/ojoLogo.jpg" alt="ojoLogo" class="home-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- *********************                                              About                            ********************* -->
+<section class="section" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-xs-12 text-center">
+          <div class="left-content">
+            <div class="thumb">
+              <img src="assets/images/perfil.jpg" alt="Profile Image" class="img-circle1">
+            </div>
+            <!-- Iconos sociales -->
+            <div class="social-icons">
+              <a href="https://orcid.org/0000-0003-3233-282X" target="_blank"><i class="fa fa-orcid"></i></a>
+              <a href="https://www.linkedin.com/in/st%C3%A9phanie-thebault-30485944/" target="_blank"><i class="fa fa-linkedin"></i></a>
+              <a href="https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=stephanie+thebault" target="_blank"><i class="fa fa-google"></i></a>
+              <a href="https://twitter.com/SaludVisualUNAM" target="_blank" style="font-size: 16px; text-decoration: none;">𝕏</a>
+            </div>
+            <!-- Sección de Educación -->
+            <div class="education-section">
+                <h3>Stéphanie Colette Thébault</h3>
+              <h6>Education</h6>
+              <ul>
+                <li><strong>Postdoc in electrophysiology related to molecular mechanisms of renal diseases</strong>, 2005-2007, Nijmegen Centre for Molecular Life Sciences (NCMLS), The Netherlands. EMBO fellow.</li>
+                <li><strong>PhD in Life and Health Sciences</strong>, 2001-2004, University of Lille I, France.</li>
+                <li><strong>Master degree in Life and Health Sciences</strong>, 2000-2001, University of Lille I, France.</li>
+                <li><strong>Bachelor of Science in Physiology</strong>, 1995-2000, University of Lille I, France.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-7 col-xs-12">
+          <div class="right-content">
+            <div class="section-heading">
+              <h6>About</h6>
+            </div>
+            <p>I am a researcher primarily interested in seeking human health. For this reason, I have dedicated myself to generating basic knowledge from molecular medicine research and to transferring this knowledge to clinical application through the development of innovation in the treatment of patients with various diseases (prostate cancer, benign prostatic hyperplasia, hypomagnesemia and diabetic retinopathy). Since 2015, I have refocused my interests on the early diagnosis of preventable diseases, notably with changes in lifestyle, but not only.</p>
+            <p>I joined the <a href="https://inb.unam.mx/" target="_blank">Institute of Neurobiology</a> from the <a href="https://www.unam.mx/" target="_blank">National Autonomous University of Mexico</a> in 2007, and started the Translational Research Laboratory in Visual Health in 2021.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+  
+    <!-- *******************                                     Footer Start                   ***************** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-xs-12">
+                    <div class="right-text-content">
+                        <ul class="social-icons">
+                            <div class="privacy-policy">
+                                <a href="https://www.inb.unam.mx/wp-content/uploads/2022/09/Avisos-de-Privacidad.pdf" target="_blank">Link to our Data Privacy Policy</a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!--                                                        jQuery                                        -->
+<script src="assets/js/jquery-2.1.0.min.js"></script>
+<!--                                                       Bootstrap                                      -->
+<script src="assets/js/popper.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<!--                                                            Plugins                                    -->
+<script src="assets/js/owl-carousel.js"></script>
+<script src="assets/js/accordions.js"></script>
+<script src="assets/js/datepicker.js"></script>
+<script src="assets/js/scrollreveal.min.js"></script>
+<script src="assets/js/waypoints.min.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/imgfix.min.js"></script> 
+<script src="assets/js/slick.js"></script> 
+<script src="assets/js/lightbox.js"></script> 
+<script src="assets/js/isotope.js"></script> 
+<script src="assets/js/scripts.js"></script>
+<script src="assets/js/custom.js"></script>
+ <!--------------------                             Scripts adicionales                         --------------->
+<script>
+    $(function() {
+        var selectedClass = "";
+        $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+            $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+                $("."+selectedClass).fadeIn();
+                $("#portfolio").fadeTo(50, 1);
+            }, 500);
+        });
+    });
+</script>
+<!--------------------           JavaScript para el menú lateral y otras interacciones           --------------->
+<script>
+    function toggleSidebar() {
+        document.querySelector('.sidebar').classList.toggle('open');
+        document.body.classList.toggle('sidebar-open');
+    }
+    function closeSidebar() {
+        document.querySelector('.sidebar').classList.remove('open');
+        document.body.classList.remove('sidebar-open');
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        var menuTrigger = document.querySelector('.menu-trigger');
+        var sidebar = document.querySelector('.sticky-sidebar');
+
+        menuTrigger.addEventListener('click', function () {
+            sidebar.classList.toggle('active');
+        });
+        document.addEventListener('click', function(event) {
+            if (!sidebar.contains(event.target) && !menuTrigger.contains(event.target)) {
+                closeSidebar(); // Cerrar el menú lateral al hacer clic fuera de él
+            }
+        });
+    });
+    function searchSections() {
+    var input = document.querySelector('.sidebar input[type="text"]').value.trim().toLowerCase();
+    var links = document.querySelectorAll('.widget ul li a');
+    links.forEach(function(link) {
+        var sectionName = link.innerText.toLowerCase();
+        if (sectionName.includes(input) && input !== "") {
+            link.scrollIntoView({ behavior: 'smooth' });
+            link.style.backgroundColor = '#A8DAB5';
+            setTimeout(function() {
+                link.style.backgroundColor = 'transparent';
+            }, 2000);
+        }
+    });
+}
+    function searchSections() {
+        var input = document.querySelector('.sidebar input[type="text"]').value.toLowerCase();
+        var links = document.querySelectorAll('.widget ul li a');
+        links.forEach(function(link) {
+            var sectionName = link.innerText.toLowerCase();
+            if (sectionName.includes(input) && input !== "") {
+                link.scrollIntoView({ behavior: 'smooth' });
+                link.style.backgroundColor = '#A8DAB5';
+                setTimeout(function() {
+                    link.style.backgroundColor = 'transparent';
+                }, 2000);
+            }
+        });
+    }    
+    document.querySelector('.sidebar button').addEventListener('click', function(event) {  // Evento para el botón de búsqueda
+        event.preventDefault();
+        searchSections();
+    });
+</script>
+</body>
+</html>

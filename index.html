@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Stéphanie Colette Thébault</title>
+    <!-- Additional CSS Files -->
+    <head>
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/owl-carousel.css">
+        <link rel="stylesheet" href="assets/css/lightbox.css">
+    <style>
+        
+        /*****                                       Menú móvil                              ******/
+        .menu-trigger {
+            display: none; /* Ocultar en pantallas grandes */
+            cursor: pointer;
+            font-size: 30px;
+            padding: 10px;   
+        }
+        /*                                    Barra lateral para pantallas grandes                            */
+        .sidebar {
+            position: fixed;
+            width: 20%; 
+            max-width: 300px;
+            height: 100%;
+            background: #fff;
+            top: 0;
+            right: 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            transform: translateX(0); /* Asegura que la barra lateral esté visible en pantallas grandes */
+        }
+        /*                         Ocultar barra lateral y mostrar botón de menú en dispositivos móviles              */
+        @media (max-width: 768px) {
+            .menu-trigger {
+                display: block; /* Mostrar botón de menú en dispositivos móviles */
+            }
+            .sidebar {
+                transform: translateX(100%); /* Ocultar barra lateral fuera de la vista en dispositivos móviles */
+                width: 70%; /* Ajustar el ancho de la barra lateral en móviles si es necesario */
+            }
+            .sidebar.open {
+                transform: translateX(0); /* Mostrar barra lateral cuando se hace clic en el botón del menú */
+            }
+            .main-nav {
+                display: none; /* Ocultar menú de navegación en el encabezado en dispositivos móviles */
+            } }
+            
+    </style>
+</head>
+<body>
+    
+
+<!--------------------                             Botón de menú para móviles y PC               ------------->
+<div class="menu-trigger" onclick="toggleSidebar()">☰</div> <!-- Cambio de idioma debajo del botón de hamburguesa -->
+<div class="language-switcher2">
+    <a href="index.html" class="active">ENG</a> |
+    <a href="index_es.html">ESP</a></div>
+<header class="header-area header-sticky">
+    <div class="container">
+        <nav class="main-nav">
+            <div class="col-12 col-lg-12"> <!-- Menú superior para escritorio -->
+            <ul class="nav" id="topMenu">
+                <li><a href="#top" class="active" onclick="closeSidebar()">Home</a></li>
+                <li><a href="#interests" onclick="closeSidebar()">interests</a></li>
+                <li><a href="#group-members" onclick="closeSidebar()">Lab Members</a></li>
+                <li><a href="#publications" onclick="closeSidebar()">Journal Articles</a></li>
+                <li><a href="#contact" onclick="closeSidebar()">Contact</a></li>
+                <li class="language-switcher">
+                    <a href="index.html" class="active">ENG</a> |
+                    <a href="index_es.html">ESP</a></li>
+                <li class="logos">
+                    <img src="assets/images/INB.png" alt="UNAM" style="margin-right: 10px;">
+                    <img src="assets/images/imagen.jpg" alt="INB" style="margin-left: 10px;">
+                </li></ul>
+        </div>
+    </nav>
+</div>
+</header>
+
+<!-- *******************                                   Menú lateral para móviles                   ***************** -->
+<div class="sidebar sticky-sidebar" id="sidebar"> <!-- Search Widget -->
+    <div class="widget">
+        <h4 class="widget-title">Search the Lab</h4>
+        <form action="#">
+            <input type="text" placeholder="Search...">
+            <button type="submit"><i class="fa fa-search"></i>Search the Lab</button>
+        </form>
+    </div>
+    <div class="widget">
+        <h4 class="widget-title">External Links</h4><ul>
+            <ul>
+                <li><a href="http://www.maestria.inb.unam.mx/" target="_blank">UNAM Master's in Sciences</a></li>
+                <li><a href="https://www.pmdcmos.unam.mx/?page_id=316" target="_blank">Master's Program in Medical, Dental, and Health Sciences</a></li>
+                <li><a href="https://www.pdcb.unam.mx/" target="_blank">Doctoral Program in Biomedical Sciences</a></li>
+            </ul>
+    </div>
+
+<!-- *******************                                   Navegacion                   ***************** -->
+    <div class="widget">
+        <h4 class="widget-title">Quick Navigation</h4>
+        <ul>
+            <li class="mobile-home"><a href="#top" onclick="closeSidebar()">Home</a></li>
+            <li><a href="#interests" onclick="closeSidebar()">Lab’s interests</a></li>
+            <li><a href="#group-members" onclick="closeSidebar()">Lab Members</a></li>
+            <li><a href="#publications" onclick="closeSidebar()">Publications</a></li>
+            <li><a href="#vacancies" onclick="closeSidebar()">Join us</a></li>
+            <li><a href="#abstracts" onclick="closeSidebar()">Video abstracts</a></li>
+            <li><a href="#contact" onclick="closeSidebar()">Contacts</a></li> 
+        </ul>
+    </div></div>
+<div class="main-content"></div>
+<script>
+    function toggleSidebar() {  // Función para abrir/cerrar el menú lateral en móviles
+            document.querySelector('.sidebar').classList.toggle('open');
+            document.body.classList.toggle('sidebar-open');
+        }
+        function closeSidebar() {
+            document.querySelector('.sidebar').classList.remove('open');
+            document.body.classList.remove('sidebar-open');
+        }
+</script>
+</body>
+</html>
+
+<!-----------------                                                  Logos y Home Section                    ------------------->
+<div class="logos-home">
+    <div class="logos"> <!-- Solo visibles en móviles -->
+        <img src="assets/images/INB.png" alt="INB" class="logo">
+        <img src="assets/images/imagen.jpg" alt="UNAM" class="logo">
+    </div>
+</div>
+<section class="section" id="home">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="home-content">
+                    <img src="assets/images/ojoLogo.jpg" alt="ojoLogo" class="home-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- *********************                                              Lab’s interests                            ********************* -->
+<section class="section" id="interests">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10 col-xs-12 text-center">
+          <div class="left-content">
+            <!-- Sección de información personal -->
+            <div class="education-section">
+                <h6 style="color: var(--color-primary); font-size: 28px; font-weight: normal;">Lab’s interests</h6>
+                <!-- Aquí está el texto proporcionado, ahora centrado -->
+                <p>We introduced a new modality for the non-invasive electroretinogram (ERG) technique to record the basal or resting electrical activity of the retina and use this signal for the timely diagnosis of sight-threatening retinopathies, like diabetic retinopathy and diabetic macular edema, and to test new treatments for retinitis pigmentosa.</p>
+                <p>Our experimental approach is interdisciplinary: we combine physiological, pharmacological, psychophysical, and bioinformatical approaches to understand the function of retinal circuits in resting conditions. We use molecular techniques to genetically target specific molecules in the retinal network.</p>
+                <p>We juggle between experimental models and human studies, depending on the questions we have to solve. We collaborate with local clinicians at <a href="https://imoiap.com.mx/" target="_blank">IMO</a> and <a href="https://seq.gob.mx/" target="_blank">SESEQ</a>, with optometrists in <a href="https://enes.unam.mx/udv.html" target="_blank">Mexico</a> and <a href="https://vision.umontreal.ca/" target="_blank">Canada</a>, vision scientists, and psychiatrists in France.</p>
+                <p>Currently, we are focusing on the use of basal ERG signals for renal and brain diseases, and the introduction of microscopic imaging to in vivo ERG measurements.</p>
+                <p>The results of our research also led us to implement a prevention program called "No More Complications with Diabetes" in the Eye Health Optometry clinic of the <a href="https://enes.unam.mx/udv.html" target="_blank">ENES León Unit of the UNAM</a>, where, among others, the non-invasive basal ERG test is used to predict the risk of developing metabolic syndrome, which is the main risk factor for type 2 diabetes, in children and adults.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- *******************                                   Miembros del grupo Section Starts                   ***************** -->
+<section class="section" id="group-members">
+    <div class="container">
+        <div class="section-heading text-center">
+            <div class="left-text-content">
+                <div class="section-heading">
+                    <h6>Group Members</h6>
+                    <br>
+                    <div class="group-category"><!-- Group Leader -->
+                        <h3 class="category-title">Group Leader<br></br></h3>
+                        <div class="member">
+                            <div class="member-info">
+                                <h5><a href="about.html">Stéphanie C. Thébault (pronounced /T ay b oh/)</a><br></br></h5>
+                            </div>
+                            <img src="assets/images/perfil.jpg" alt="Stéphanie C. Thébault" class="member-photo">
+                        </div>
+                    </div>
+<!-- Divider Line -->
+<hr class="divider">
+<!-- Postdoctoral Fellows -->
+<div class="group-category">
+    <h3 class="category-title">Postdoctoral Fellows<br></br></h3>
+    <div class="member">
+        <div class="member-info">
+            <h5>Cynthia Alejandra Rodríguez Arzate<br></br></h5>
+        </div>
+        <img src="assets/images/Ale.jpg" alt="Cynthia Alejandra Rodríguez Arzate" class="member-photo">
+    </div>
+</div>
+<!-- Divider Line -->
+<hr class="divider">
+<!-- Ph.D. Students -->
+<div class="group-category">
+    <h3 class="category-title">Ph.D. Students<br></br></h3>
+    <div class="member">
+        <div class="member-info">
+            <h5>Jorge Armando Hughes Cano<br></br></h5>
+        </div>
+        <img src="assets/images/Armando_doct.jpg" alt="Jorge Armando Hughes Cano" class="member-photo">
+    </div>
+    <div class="member">
+        <div class="member-info">
+            <h5>Ana Laura Martínez Hernández<br></br></h5>
+        </div>
+        <img src="assets/images/Ana Laura.jpg" alt="Ana Laura Martínez Hernández" class="member-photo">
+    </div>
+    <div class="member">
+        <div class="member-info">
+            <h5>Georgina Soto Cruz<br></br></h5>
+        </div>
+        <img src="assets/images/Georg3.jpg" alt="Georgina Soto Cruz" class="member-photo">
+    </div>
+</div>
+<!-- Divider Line -->
+<hr class="divider">
+<!-- Master Degree Students -->
+<div class="group-category">
+    <h3 class="category-title">Master Degree Students<br></br></h3>
+    <div class="member">
+        <div class="member-info">
+            <h5>Omar Hernández de los Santos<br></br></h5>
+        </div>
+        <img src="assets/images/Omar Hernández de los Santos.jpg" alt="Omar Hernández de los Santos" class="member-photo">
+    </div>
+    <div class="member">
+        <div class="member-info">
+            <h5>Judith Guerrero Zavala<br></br></h5>
+        </div>
+        <img src="assets/images/jud.jpg" alt="Judith Guerrero Zavala" class="member-photo">
+    </div>
+</div>
+<!-- Divider Line -->
+<hr class="divider">
+<!-- Contenido Oculto (Undergraduate Students) -->
+<div id="moreGroupMembers" style="display: none;">
+    <!-- Undergraduate Students -->
+    <div class="group-category">
+        <h3 class="category-title">Undergraduate Students<br></br></h3>
+        <div class="member">
+            <div class="member-info">
+                <h5>Ana Sofía Aguilar de los Cobos<br></br></h5>
+            </div>
+            <img src="assets/images/Sofía Aguilar de los Cobos.png" alt="Ana Sofía Aguilar de los Cobos" class="member-photo">
+        </div>
+        <div class="member">
+            <div class="member-info">
+                <h5>Mishelle Pérez Félix<br></br></h5>
+            </div>
+            <img src="assets/images/anonimo.png" alt="Mishelle Pérez Félix" class="member-photo">
+        </div>
+        <div class="member">
+            <div class="member-info">
+                <h5>Malinalli Sánchez García<br></br></h5>
+            </div>
+            <img src="assets/images/anonimo.png" alt="Malinalli Sánchez García" class="member-photo">
+        </div>
+        <div class="member">
+            <div class="member-info">
+                <h5>Noelia Uribe Martínez<br></br></h5>
+            </div>
+            <img src="assets/images/anonimo.png" alt="Noelia Uribe Martínez" class="member-photo">
+        </div>
+    </div>
+</div>
+                    <!-- Enlace para mostrar más texto -->
+                    <a href="javascript:void(0);" onclick="toggleGroupMembers()" id="toggleGroupLink">Read more</a>
+                </div>
+            </div>
+        </div>
+</section>
+<script>
+    function toggleGroupMembers() {
+        var moreGroupMembers = document.getElementById("moreGroupMembers");
+        var toggleGroupLink = document.getElementById("toggleGroupLink");
+        if (moreGroupMembers.style.display === "none") {
+            moreGroupMembers.style.display = "block";
+            toggleGroupLink.innerHTML = "Read less";
+        } else {
+            moreGroupMembers.style.display = "none";
+            toggleGroupLink.innerHTML = "Read more";
+        }}
+</script>
+<script>
+    function toggleContent() {
+        var moreContent = document.getElementById("moreContent");
+        var toggleButton = document.getElementById("toggleButton");
+        if (moreContent.style.display === "none") {
+            moreContent.style.display = "block";
+            toggleButton.textContent = "Read less";
+        } else {
+            moreContent.style.display = "none";
+            toggleButton.textContent = "Read More";
+        } }
+</script>
+
+<!-- *******************                                     Sección de Publicaciones Comienza                   ***************** -->
+<section class="section" id="publications"> 
+    <div class="container"> 
+        <div class="left-text-content"> 
+        <div class="row"> 
+            <div class="col-lg-12"> 
+                <div class="section-heading"> 
+                    <h6>Publications</h6>
+                    <p style="text-align: center; font-weight: bold;">Selected Scientific Publications</p>
+                        <br> </div>
+                <!-- Publication List -->
+                <ul class="publication-list">
+                    <li>
+                        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/38690083/" target="_blank">Editorial: Women in neuroscience of Bioelectronic Medicine</a></h3>
+                        <p>Thébault SC, Tremblay MÈ, Conde SV, González-González MA. <i>Front Integr Neurosci.</i> 2024 Apr 16;18:1406013. doi: 10.3389/fnint.2024.1406013. PMID: 38690083</p>
+                    </li>
+                    <li>
+                        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/38440417/" target="_blank">Bioelectronic Medicine: a multidisciplinary roadmap from biophysics to precision therapies</a></h3>
+                        <p>González-González MA, Conde SV, Latorre R, Thébault SC, et al. <i>Front Integr Neurosci.</i> 2024 Feb 19;18:1321872. doi: 10.3389/fnint.2024.1321872. eCollection 2024. PMID: 38440417</p>
+                    </li>
+                    <li>
+                        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/38342360/" target="_blank">Contribution of chemical and electrical transmission to the low delta-like intrinsic retinal oscillation in mice: A role for daylight-activated neuromodulators</a></h3>
+                        <p>Reyes-Ortega P, Rodríguez-Arzate A, Noguez-Imm R, Arnold E, Thébault SC. <i>Eur J Pharmacol.</i> 2024 Apr 5;968:176384. doi: 10.1016/j.ejphar.2024.176384. Epub 2024 Feb 9. PMID: 38342360</p>
+                    </li>
+                    <li>
+                        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/38269118/" target="_blank">Potential contributions of the intrinsic retinal oscillations recording using non-invasive electroretinogram to bioelectronics</a></h3>
+                 <p>Rodríguez-Arzate CA, Noguez-Imm R, Reyes-Ortega P, et al. <i>Front Cell Neurosci.</i> 2024 Jan 8;17:1224558. doi: 10.3389/fncel.2023.1224558. eCollection 2023. PMID: 38269118</p>
+                    </li>
+                    <li>
+                        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/38219645/" target="_blank">Improved predictive diagnosis of diabetic macular edema based on hybrid models: An observational study</a></h3>
+                        <p>Hughes-Cano JA, Quiroz-Mercado H, Hernández-Zimbrón LF, et al. <i>Comput Biol Med.</i> 2024 Mar;170:107979. doi: 10.1016/j.compbiomed.2024.107979. Epub 2024 Jan 11. PMID: 38219645</p>
+                    </li>
+                    <li>
+                        <h3><a href="https://pubmed.ncbi.nlm.nih.gov/36634073/" target="_blank">Preventable risk factors for type 2 diabetes can be detected using noninvasive spontaneous electroretinogram signals</a></h3>
+                        <p>Noguez Imm R, Muñoz-Benitez J, Medina D, et al. <i>PLoS One.</i> 2023 Jan 12;18(1):e0278388. doi: 10.1371/journal.pone.0278388. eCollection 2023. PMID: 36634073</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </section> 
+ 
+<!-- *******************                                     Join Us Section Starts                   ***************** -->
+<section class="section" id="vacancies">
+    <div class="container">
+        <div class="section-heading">
+            <h6>Join Us</h6> </div> <p style="text-align: center; font-weight: bold;">Diversity Statement</p><br> <p>We embrace diversity and we commit to inclusion. All are welcome here. Join our lab and let your uniqueness shine!</p><br><br>
+            <ul class="publication-list">
+                <li><strong>Posdoctoral's projects :</strong> Schorlarship program<a href="https://conacyt.mx/" target="_blank">CONAHCYT</a> y <a href="https://www.dgapa.unam.mx/index.php/posdoc" target="_blank">POSDOC de la DGAPA-UNAM</a>.</li>
+                <li><strong>Doctoral's projects:</strong> Programs <a href="https://www.unam.mx/" target="_blank">UNAM</a> en ciencias biomédicas, ciencias biológicas, ciencias médicas, de la salud y odontológicas; programa binacional <a href="https://recherche.umontreal.ca/english/our-researchers/professors-directory/researcher/is/in19692/" target="_blank">École d’Optométrie de Montréal-UNAM</a>.</li>
+                <li><strong>Master's projects:</strong> Program <a href="https://inb.unam.mx/" target="_blank">INB-UNAM en Ciencias – Neurobiología</a>; programa de <a href="https://www.vision-sciences.fr/international-master-vision-sciences/" target="_blank">Maestría Internacional en Ciencias de la Visión</a>; programa en inteligencia artificial de la <a href="https://www.uaq.mx/" target="_blank">UAQ</a>.</li>
+                <li><strong>Undergraduate's projects:</strong> Tesis de licenciatura, servicios sociales, prácticas profesionales, estancias cortas de verano, etc.</li>
+            </ul>
+    </div>
+    <br>
+</section>
+
+<!-- *******************                                     Video Abstracts Section Start                   ***************** -->
+<section class="section" id="abstracts">
+    <div class="container">
+        <div class="left-text-content"></div>
+        <a id="video-abstracts-anchor" style="display: block; position: relative; top: -100px; visibility: hidden;"></a>
+        <div class="section-heading">
+            <h6>Video abstracts</h6>
+        </div>
+        <!-- Contenedor para los videos -->
+        <div class="video-container" style="text-align: center;">
+            <p style="text-align: left; margin-left: 30%;">Video 1</p>
+            <iframe width="80%" height="450" src="https://www.youtube.com/embed/tu-video-id" frameborder="0" allowfullscreen></iframe>
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="left-text-content"></div>
+            <div class="section-heading">
+                <h6>Contact</h6>
+            </div>
+            <div class="contact-info">
+                <div class="contact-details">
+                    <h5>Institute of Neurobiology, UNAM Campus Juriquilla</h5>
+                    <p>Laboratory D13</p>
+                    <p>Blvd Juriquilla #3001, CP76230 Juriquilla, Querétaro, Mexico</p>
+                    
+<!-- *******************                                     Información de Teléfono                   ***************** -->
+                    <div class="contact-item">
+                        <div class="icon-container">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+ 
+                            <p><img src="assets/images/tel.jpg" alt="Número de teléfono" class="contact-image1"></p>
+                        </div>
+                    </div>
+                    <!---------------------                 Información de Correo Electrónico                 ---------->
+                    <div class="contact-item">
+                        <div class="icon-container">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <p><img src="assets/images/email1.jpg" alt="Correo Electrónico 1" class="contact-image">
+                               <img src="assets/images/email2.jpg" alt="Correo Electrónico 2" class="contact-image">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- *******************                                     Footer Start                   ***************** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-xs-12">
+                    <div class="right-text-content">
+                        <ul class="social-icons">
+                            <div class="privacy-policy">
+                                <a href="https://www.inb.unam.mx/wp-content/uploads/2022/09/Avisos-de-Privacidad.pdf" target="_blank">Link to our Data Privacy Policy</a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!--                                                        jQuery                                        -->
+<script src="assets/js/jquery-2.1.0.min.js"></script>
+<!--                                                       Bootstrap                                      -->
+<script src="assets/js/popper.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<!--                                                            Plugins                                    -->
+<script src="assets/js/owl-carousel.js"></script>
+<script src="assets/js/accordions.js"></script>
+<script src="assets/js/datepicker.js"></script>
+<script src="assets/js/scrollreveal.min.js"></script>
+<script src="assets/js/waypoints.min.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/imgfix.min.js"></script> 
+<script src="assets/js/slick.js"></script> 
+<script src="assets/js/lightbox.js"></script> 
+<script src="assets/js/isotope.js"></script> 
+<script src="assets/js/scripts.js"></script>
+<script src="assets/js/custom.js"></script>
+ <!--------------------                             Scripts adicionales                         --------------->
+<script>
+    $(function() {
+        var selectedClass = "";
+        $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+            $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+                $("."+selectedClass).fadeIn();
+                $("#portfolio").fadeTo(50, 1);
+            }, 500);
+        });
+    });
+</script>
+<!--------------------           JavaScript para el menú lateral y otras interacciones           --------------->
+<script>
+    function toggleSidebar() {
+        document.querySelector('.sidebar').classList.toggle('open');
+        document.body.classList.toggle('sidebar-open');
+    }
+    function closeSidebar() {
+        document.querySelector('.sidebar').classList.remove('open');
+        document.body.classList.remove('sidebar-open');
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        var menuTrigger = document.querySelector('.menu-trigger');
+        var sidebar = document.querySelector('.sticky-sidebar');
+
+        menuTrigger.addEventListener('click', function () {
+            sidebar.classList.toggle('active');
+        });
+        document.addEventListener('click', function(event) {
+            if (!sidebar.contains(event.target) && !menuTrigger.contains(event.target)) {
+                closeSidebar(); // Cerrar el menú lateral al hacer clic fuera de él
+            }
+        });
+    });
+    function searchSections() {
+    var input = document.querySelector('.sidebar input[type="text"]').value.trim().toLowerCase();
+    var links = document.querySelectorAll('.widget ul li a');
+    links.forEach(function(link) {
+        var sectionName = link.innerText.toLowerCase();
+        if (sectionName.includes(input) && input !== "") {
+            link.scrollIntoView({ behavior: 'smooth' });
+            link.style.backgroundColor = '#A8DAB5';
+            setTimeout(function() {
+                link.style.backgroundColor = 'transparent';
+            }, 2000);
+        }
+    });
+}
+    function searchSections() {
+        var input = document.querySelector('.sidebar input[type="text"]').value.toLowerCase();
+        var links = document.querySelectorAll('.widget ul li a');
+        links.forEach(function(link) {
+            var sectionName = link.innerText.toLowerCase();
+            if (sectionName.includes(input) && input !== "") {
+                link.scrollIntoView({ behavior: 'smooth' });
+                link.style.backgroundColor = '#A8DAB5';
+                setTimeout(function() {
+                    link.style.backgroundColor = 'transparent';
+                }, 2000);
+            }
+        });
+    }    
+    document.querySelector('.sidebar button').addEventListener('click', function(event) {  // Evento para el botón de búsqueda
+        event.preventDefault();
+        searchSections();
+    });
+</script>
+</body>
+</html>
